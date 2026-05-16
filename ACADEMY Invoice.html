@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -44,7 +43,7 @@ body{
 .logo{
     width:120px;
     height:120px;
-    background:rgb(253, 253, 253);
+    background:#003366;
     border-radius:50%;
     display:flex;
     justify-content:center;
@@ -103,8 +102,8 @@ table{
 }
 
 table th{
-    background:#fa4310;
-    color:rgb(1, 1, 90);
+    background:#003366;
+    color:white;
     padding:12px;
 }
 
@@ -171,8 +170,8 @@ table td{
     <div class="header">
 
         <div class="logo">
-    <img src="logo.jpg" alt="Company Logo">
-</div>
+            LS
+        </div>
 
         <div class="company-details">
 
@@ -201,18 +200,18 @@ table td{
 
     </div>
 
-    <!-- STUDENT INFO -->
+    <!-- CUSTOMER INFO -->
     <div class="invoice-info">
 
         <div class="box">
 
-            <h3>Student Details</h3>
+            <h3>Customer Details</h3>
 
-            <label>Student Name</label>
-            <input type="text" placeholder="Enter Student Name">
+            <label>Customer Name</label>
+            <input type="text" placeholder="Enter Customer Name">
 
-            <label>Student Address</label>
-            <input type="text" placeholder="Enter Student Address">
+            <label>Customer Address</label>
+            <input type="text" placeholder="Enter Customer Address">
 
             <label>Phone Number</label>
             <input type="text" placeholder="Enter Phone Number">
@@ -230,21 +229,21 @@ table td{
             <input type="date" id="invoiceDate">
 
             <label>Email</label>
-            <input type="email" placeholder="Enter Student Email">
+            <input type="email" placeholder="Enter Customer Email">
 
         </div>
 
     </div>
 
-    <!-- COURSE TABLE -->
+    <!-- PRODUCT TABLE -->
     <table id="invoiceTable">
 
         <thead>
 
             <tr>
-                <th>Course Name</th>
-                <th>Fees (₹)</th>
-                <th>Total Fees (₹)</th>
+                <th>Product Name</th>
+                <th>Price (₹)</th>
+                <th>Total (₹)</th>
                 <th class="no-print">Action</th>
             </tr>
 
@@ -252,24 +251,24 @@ table td{
 
         <tbody id="tableBody">
 
-            <!-- SAMPLE COURSES-->
+            <!-- SAMPLE PRODUCTS -->
 
             <tr>
 
                 <td>
-                    <input type="text" class="COURSE"
-                    value="SMAW PROFETIONAL">
+                    <input type="text" class="product"
+                    value="Shipping Training Course">
                 </td>
 
                 <td>
                     <input type="number"
                     class="price"
-                    value="45000"
+                    value="15000"
                     oninput="calculateTotal()">
                 </td>
 
                 <td class="rowTotal">
-                    45000
+                    15000
                 </td>
 
                 <td class="no-print">
@@ -284,7 +283,7 @@ table td{
             <tr>
 
                 <td>
-                    <input type="text" class="COURSE"
+                    <input type="text" class="product"
                     value="Industrial Safety Course">
                 </td>
 
@@ -314,7 +313,7 @@ table td{
 
     <button class="btn add-btn no-print"
     onclick="addRow()">
-    + Add Course
+    + Add Product
     </button>
 
     <!-- TOTAL -->
@@ -349,8 +348,8 @@ function addRow(){
 
         <td>
             <input type="text"
-            class="COURSE"
-            placeholder="Enter Course Name">
+            class="product"
+            placeholder="Enter Product">
         </td>
 
         <td>
