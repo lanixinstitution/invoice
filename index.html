@@ -177,6 +177,70 @@ table td{
 
 <body>
 
+<style>
+.login-overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#003366;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.login-box{
+    background:white;
+    padding:40px;
+    border-radius:12px;
+    width:350px;
+    box-shadow:0 0 15px rgba(0,0,0,0.3);
+}
+
+.login-box h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:#003366;
+}
+
+.login-box input{
+    margin-bottom:15px;
+}
+
+.login-btn{
+    width:100%;
+    background:#003366;
+}
+
+.error-msg{
+    color:red;
+    margin-top:10px;
+    text-align:center;
+    display:none;
+}
+</style>
+
+<div class="login-overlay" id="loginOverlay">
+    <div class="login-box">
+        <h2>Admin Login</h2>
+
+        <label>Username</label>
+        <input type="text" id="username" placeholder="Enter Username">
+
+        <label>Password</label>
+        <input type="password" id="password" placeholder="Enter Password">
+
+        <button class="btn login-btn" onclick="login()">Login</button>
+
+        <div class="error-msg" id="errorMsg">
+            Invalid username or password
+        </div>
+    </div>
+</div>
+
+
 <div class="invoice-container" id="invoice">
 
     <!-- HEADER -->
@@ -353,6 +417,32 @@ table td{
 </div>
 
 <script>
+
+function login(){
+
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    if(username === "invoiceadmin" && password === "lanix0101"){
+
+        document.getElementById("loginOverlay").style.display = "none";
+
+    } else {
+
+        document.getElementById("errorMsg").style.display = "block";
+    }
+}
+
+document.addEventListener("keydown", function(event){
+    if(event.key === "Enter"){
+        const overlay = document.getElementById("loginOverlay");
+        if(overlay.style.display !== "none"){
+            login();
+        }
+    }
+});
+
+
 
 document.getElementById("invoiceDate").valueAsDate = new Date();
 
